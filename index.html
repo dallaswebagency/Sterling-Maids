@@ -8,7 +8,7 @@
 <link rel="icon" href="images/sterling-maids-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Albert+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --ink:#12151c;
@@ -25,8 +25,8 @@
   --muted:#5d636d;
   --line:rgba(18,21,28,.14);
   --line-d:rgba(233,235,238,.16);
-  --serif:"Bodoni Moda",Georgia,serif;
-  --sans:"Albert Sans",system-ui,sans-serif;
+  --serif:"DM Serif Display",Georgia,serif;
+  --sans:"Manrope",system-ui,sans-serif;
   --wrap:1240px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -72,7 +72,7 @@ nav.main .dd a{display:block;padding:9px 20px;font-size:14px}
 .hero .wrap{display:grid;grid-template-columns:1.08fr .92fr;gap:64px;align-items:center;padding-top:80px;padding-bottom:96px;position:relative}
 .hero .eyebrow{color:var(--gold);display:flex;align-items:center;gap:14px}
 .hero .eyebrow::before{content:"";width:38px;height:1px;background:var(--gold)}
-.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(46px,6.2vw,92px);line-height:.98;letter-spacing:-.02em;margin:26px 0 28px}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(44px,5.6vw,82px);line-height:1.02;letter-spacing:-.01em;margin:26px 0 28px}
 .hero h1 em{font-style:italic}
 .hero p.lead{font-size:19px;color:var(--silver);max-width:500px}
 .hero .ctas{display:flex;gap:14px;margin-top:38px;flex-wrap:wrap}
@@ -117,63 +117,71 @@ nav.main .dd a{display:block;padding:9px 20px;font-size:14px}
 .freq-copy p{color:var(--muted);font-size:16px}
 .freq-copy a{display:inline-block;margin-top:22px;font-weight:600;color:var(--ink);border-bottom:2px solid var(--gold);padding-bottom:3px}
 
-/* ===== services index ===== */
+/* ===== services: expanding panels ===== */
 .services{background:var(--ink);color:var(--silver-hi);padding:120px 0}
-.services .top{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:60px}
+.services .top{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
 .services .h2{color:#fff}
 .services .eyebrow{color:var(--gold)}
 .services .top p{max-width:380px;color:var(--silver)}
-.svc-wrap{display:grid;grid-template-columns:1fr 400px;gap:60px;align-items:start}
-.svc-list{border-top:1px solid var(--line-d)}
-.svc{display:grid;grid-template-columns:70px 1fr auto;gap:20px;align-items:center;padding:28px 0;border-bottom:1px solid var(--line-d);cursor:pointer;transition:.3s}
-.svc .n{font-family:var(--serif);font-style:italic;color:var(--silver-lo);font-size:20px}
-.svc h3{font-family:var(--serif);font-weight:400;font-size:clamp(26px,2.8vw,38px);line-height:1.1;color:var(--silver);transition:.3s}
-.svc p{font-size:15px;color:var(--silver-lo);max-height:0;overflow:hidden;transition:max-height .4s, margin .4s;max-width:560px}
-.svc .arr{width:44px;height:44px;border:1px solid var(--line-d);border-radius:50%;display:grid;place-items:center;transition:.3s}
-.svc .arr svg{width:16px}
-.svc.on h3{color:#fff}
-.svc.on .n{color:var(--gold)}
-.svc.on p{max-height:120px;margin-top:10px}
-.svc.on .arr{background:var(--gold);border-color:var(--gold);color:var(--ink)}
-.svc-photo{position:sticky;top:120px;aspect-ratio:3/4;overflow:hidden;clip-path:inset(0 round 0 90px 0 90px)}
-.svc-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s, transform 1.2s;transform:scale(1.06)}
-.svc-photo img.on{opacity:1;transform:scale(1)}
-.svc-photo .cap{position:absolute;left:0;bottom:0;right:0;padding:22px 24px;background:linear-gradient(transparent,rgba(12,14,19,.85));font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--silver-hi)}
-.svc-thumb{display:none}
+.panels{display:flex;gap:10px;height:580px}
+.panel{position:relative;flex:1;min-width:0;overflow:hidden;cursor:pointer;transition:flex .7s cubic-bezier(.2,.7,.2,1);background:var(--ink-2)}
+.panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(.6) brightness(.55);transition:filter .7s, transform 1.4s}
+.panel::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,14,19,.15) 30%,rgba(12,14,19,.88));pointer-events:none}
+.panel .num{position:absolute;top:24px;left:22px;z-index:2;font-family:var(--serif);font-style:italic;font-size:20px;color:var(--gold)}
+.panel .vlabel{position:absolute;z-index:2;left:50%;bottom:30px;writing-mode:vertical-rl;transform:translateX(-50%) rotate(180deg);font-family:var(--serif);font-size:26px;color:#fff;white-space:nowrap;transition:opacity .3s}
+.panel .body{position:absolute;z-index:2;left:36px;right:36px;bottom:36px;opacity:0;transform:translateY(24px);transition:opacity .4s, transform .5s;pointer-events:none}
+.panel .body h3{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3vw,42px);line-height:1.08;color:#fff}
+.panel .body p{color:var(--silver-hi);font-size:16px;max-width:430px;margin:12px 0 18px}
+.panel .body a{font-weight:600;font-size:14px;color:var(--gold);border-bottom:1px solid var(--gold);padding-bottom:3px;pointer-events:auto}
+.panel.on{flex:4.4}
+.panel.on img{filter:none;transform:scale(1.03)}
+.panel.on .vlabel{opacity:0}
+.panel.on .body{opacity:1;transform:none;transition-delay:.25s}
 
 /* ===== local ===== */
-.local{padding:120px 0 0;position:relative}
-.local-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:28px;align-items:start}
-.local .quote{grid-column:1/8}
-.local .quote .eyebrow{color:var(--gold-deep)}
-.local blockquote{font-family:var(--serif);font-size:clamp(38px,5vw,74px);line-height:1.02;letter-spacing:-.02em;color:var(--ink);margin:24px 0 30px}
-.local blockquote em{font-style:italic;color:var(--gold-deep)}
-.local .quote p{max-width:520px;color:var(--muted)}
-.local .team{grid-column:8/13;margin-top:20px;position:relative}
-.local .team img{aspect-ratio:4/5;object-fit:cover;width:100%}
-.local .team figcaption{font-size:13px;color:var(--muted);margin-top:12px;display:flex;gap:10px;align-items:center}
-.local .team figcaption::before{content:"";width:24px;height:1px;background:var(--gold-deep)}
-.areas{margin-top:90px;display:grid;grid-template-columns:1.1fr 1fr;border-top:1px solid var(--line)}
-.areas .names{padding:40px 40px 50px 0;border-right:1px solid var(--line)}
-.areas .names li{list-style:none;font-family:var(--serif);font-size:clamp(40px,5vw,72px);line-height:1.1;color:var(--ink);display:flex;align-items:baseline;gap:18px;border-bottom:1px solid var(--line);padding:10px 0}
-.areas .names li:last-child{border:0}
-.areas .names li small{font-family:var(--sans);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--silver-lo)}
-.areas .skyline{position:relative;min-height:420px}
-.areas .skyline img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.areas .skyline .tag{position:absolute;left:28px;bottom:28px;background:var(--paper);padding:16px 20px;font-size:14px;max-width:290px}
-.areas .skyline .tag b{display:block;font-family:var(--serif);font-weight:500;font-size:18px;color:var(--ink)}
+.local{background:var(--paper);padding-bottom:120px}
+.local-band{position:relative;height:540px;overflow:hidden}
+.local-band img{width:100%;height:100%;object-fit:cover}
+.local-band::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,21,28,.05),rgba(18,21,28,.45))}
+.local-band .yyc{position:absolute;right:28px;top:26px;z-index:1;color:#fff;font-size:12px;letter-spacing:.24em;text-transform:uppercase;font-weight:600}
+.local-card{position:relative;z-index:2;margin-top:-240px;display:grid;grid-template-columns:1.3fr .7fr;box-shadow:0 30px 70px rgba(18,21,28,.22)}
+.local-copy{background:var(--ink);color:var(--silver);padding:64px 60px}
+.local-copy .eyebrow{color:var(--gold)}
+.local-copy blockquote{font-family:var(--serif);font-size:clamp(36px,4.2vw,62px);line-height:1.04;color:#fff;margin:20px 0 24px}
+.local-copy blockquote em{color:var(--gold)}
+.local-copy p{max-width:520px}
+.local-team{position:relative;min-height:360px}
+.local-team img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.local-team span{position:absolute;left:0;bottom:0;background:var(--gold);color:var(--ink);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:10px 16px}
+.area-row{display:grid;grid-template-columns:repeat(3,1fr);margin-top:70px;border-top:1px solid var(--line)}
+.area{padding:34px 30px 10px 0;border-right:1px solid var(--line);margin-right:30px}
+.area:last-child{border-right:0;margin-right:0}
+.area .n{font-family:var(--serif);font-style:italic;color:var(--gold-deep);font-size:18px}
+.area h3{font-family:var(--serif);font-weight:400;font-size:clamp(38px,4vw,56px);line-height:1.1;color:var(--ink);margin:6px 0 8px}
+.area p{color:var(--muted);font-size:15px;margin-bottom:16px}
+.area a{font-weight:600;font-size:14px;color:var(--ink);border-bottom:2px solid var(--gold);padding-bottom:2px}
 
 /* ===== reviews ===== */
-.reviews{background:var(--paper-2);padding:110px 0}
-.rev-card{display:grid;grid-template-columns:240px 1fr auto;gap:56px;align-items:center;background:var(--ink);color:var(--silver-hi);padding:56px 60px;position:relative;overflow:hidden}
-.rev-card::after{content:"\201C";position:absolute;right:30px;top:-60px;font-family:var(--serif);font-size:340px;color:rgba(255,255,255,.04);line-height:1}
-.rev-card img{width:200px;height:200px;object-fit:cover;border:1px solid rgba(198,166,75,.4)}
-.rev-card .eyebrow{color:var(--gold)}
-.rev-card h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3.4vw,48px);line-height:1.08;margin:14px 0 14px;color:#fff}
-.rev-card p{color:var(--silver);max-width:460px}
-.stars{display:flex;gap:4px;margin-bottom:6px}
-.stars svg{width:20px;height:20px;fill:var(--gold)}
-.rev-card .act{display:flex;flex-direction:column;gap:12px;position:relative;z-index:1}
+.reviews{background:var(--gold);color:var(--ink);padding:100px 0;position:relative;overflow:hidden}
+.reviews::before{content:"";position:absolute;inset:0;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='70' height='70' viewBox='0 0 24 24'%3E%3Cpath fill='%2312151c' transform='translate(6 6) scale(.5)' d='m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z'/%3E%3C/svg%3E")}
+.rev-grid{position:relative;display:grid;grid-template-columns:auto 1.4fr auto;gap:64px;align-items:center}
+.rev-score{text-align:center}
+.rev-score b{display:block;font-family:var(--serif);font-weight:400;font-size:200px;line-height:.85;color:var(--ink)}
+.rev-score .stars{justify-content:center;margin:14px 0 8px}
+.stars{display:flex;gap:4px}
+.stars svg{width:22px;height:22px;fill:var(--ink)}
+.rev-score small{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
+.rev-copy .eyebrow{color:var(--ink);opacity:.75}
+.rev-copy h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,3.8vw,54px);line-height:1.05;margin:14px 0 16px}
+.rev-copy p{max-width:460px;color:#2d2a20}
+.rev-copy .acts{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{background:#000}
+.btn-oink{border:1.5px solid var(--ink);color:var(--ink)}
+.btn-oink:hover{background:rgba(18,21,28,.08)}
+.rev-badge{position:relative;width:230px;height:230px;display:grid;place-items:center}
+.rev-badge img{width:156px;height:156px;border-radius:50%;object-fit:contain;padding:18px;background:#000;border:3px solid var(--ink)}
+.rev-badge svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 30s linear infinite}
 
 /* ===== book ===== */
 .book{padding:120px 0;background:var(--paper)}
@@ -239,15 +247,19 @@ footer{background:#0c0e13;color:var(--silver);padding:90px 0 0;font-size:15px}
   .freq-tabs{display:grid;grid-template-columns:repeat(3,1fr);border-right:0;border-bottom:1px solid var(--line)}
   .freq-tabs button{font-size:19px;flex-direction:column;align-items:flex-start;gap:6px;padding:22px 20px;border-bottom:0;border-right:1px solid var(--line)}
   .freq-tabs button:last-child{border-right:0}
-  .svc-wrap{grid-template-columns:1fr}
-  .svc-photo{display:none}
-  .svc-thumb{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;margin-top:14px;max-height:0;transition:max-height .4s}
-  .svc.on .svc-thumb{max-height:400px}
   .services .top{flex-direction:column;align-items:flex-start}
-  .local .quote,.local .team{grid-column:1/-1}
-  .areas{grid-template-columns:1fr}
-  .areas .names{border-right:0;padding-right:0}
-  .rev-card{grid-template-columns:1fr;gap:28px;padding:44px 32px}
+  .panels{flex-direction:column;height:auto}
+  .panel{flex:none;height:88px;transition:height .6s cubic-bezier(.2,.7,.2,1)}
+  .panel.on{flex:none;height:420px}
+  .panel .vlabel{writing-mode:horizontal-tb;transform:none;left:64px;bottom:auto;top:26px;font-size:22px}
+  .panel .num{top:30px}
+  .local-band{height:380px}
+  .local-card{grid-template-columns:1fr;margin-top:-140px}
+  .area-row{grid-template-columns:1fr}
+  .area{border-right:0;margin-right:0;border-bottom:1px solid var(--line);padding-right:0}
+  .rev-grid{grid-template-columns:1fr;gap:36px;text-align:left}
+  .rev-score{text-align:left}
+  .rev-score .stars{justify-content:flex-start}
   .book-grid{grid-template-columns:1fr}
   .ft-top{grid-template-columns:1fr 1fr}
 }
@@ -266,14 +278,15 @@ footer{background:#0c0e13;color:var(--silver);padding:90px 0 0;font-size:15px}
   .voucher-tag{right:-6px}
   .hero-visual::after{inset:14px -12px -14px 12px}
   .rhythm,.services,.reviews,.book{padding:84px 0}
-  .local{padding-top:84px}
+  .local{padding-bottom:84px}
   .freq-view{grid-template-columns:1fr;padding:28px 20px;gap:30px}
   .freq-copy .big{font-size:64px}
-  .svc{grid-template-columns:44px 1fr auto;gap:12px}
   .book-side,form.bk{padding:40px 24px}
   .f2{grid-template-columns:1fr;gap:0}
   .ft-top{grid-template-columns:1fr}
-  .rev-card img{width:150px;height:150px}
+  .local-copy{padding:44px 24px}
+  .rev-score b{font-size:150px}
+  .panel .body{left:22px;right:22px;bottom:24px}
 }
 </style>
 </head>
@@ -344,11 +357,11 @@ footer{background:#0c0e13;color:var(--silver);padding:90px 0 0;font-size:15px}
       </div>
     </div>
     <div class="hero-visual rv">
-      <div class="frame"><img src="images/living-room.webp" alt="A freshly cleaned living room with hardwood floors"></div>
+      <div class="frame"><img src="images/living-room-bright.webp" alt="A bright, freshly cleaned living room"></div>
       <div class="voucher-tag">$50 voucher<small>when you book online</small></div>
       <div class="stamp" aria-hidden="true">
         <svg class="ring" viewBox="0 0 150 150"><defs><path id="c" d="M75,75 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0"/></defs>
-          <text font-family="Albert Sans" font-size="10.5" letter-spacing="3.2" fill="#b9bdc4"><textPath href="#c">STERLING MAIDS · BIG CITY SERVICE · SMALL TOWN FEEL ·</textPath></text></svg>
+          <text font-family="Manrope" font-size="10.5" letter-spacing="3.2" fill="#b9bdc4"><textPath href="#c">STERLING MAIDS · BIG CITY SERVICE · SMALL TOWN FEEL ·</textPath></text></svg>
         <div class="core"><b>YYC</b>home cleaning</div>
       </div>
     </div>
@@ -384,7 +397,7 @@ footer{background:#0c0e13;color:var(--silver);padding:90px 0 0;font-size:15px}
   </div>
 </section>
 
-<!-- SERVICES INDEX -->
+<!-- SERVICES -->
 <section class="services" id="services">
   <div class="wrap">
     <div class="top rv">
@@ -394,77 +407,70 @@ footer{background:#0c0e13;color:var(--silver);padding:90px 0 0;font-size:15px}
       </div>
       <p>From regular upkeep to the heavy-duty jobs, choose the service that fits and we'll take it from there.</p>
     </div>
-    <div class="svc-wrap">
-      <div class="svc-list">
-        <div class="svc on" data-i="0">
-          <span class="n">01</span>
-          <div><h3>Recurring Cleaning</h3><p>Standard cleaning on a weekly, bi-weekly or monthly schedule. Consistency is key.</p><img class="svc-thumb" src="images/living-room.webp" alt=""></div>
-          <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-        </div>
-        <div class="svc" data-i="1">
-          <span class="n">02</span>
-          <div><h3>Deep Cleaning</h3><p>Made for homes with kids, pets and busy schedules. Pre-event cleaning and the heavy-duty tasks.</p><img class="svc-thumb" src="images/team-training.webp" alt=""></div>
-          <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-        </div>
-        <div class="svc" data-i="2">
-          <span class="n">03</span>
-          <div><h3>Move-In / Move-Out Cleaning</h3><p>Professional cleaning to help you settle into your new place, or hand back the old one spotless.</p><img class="svc-thumb" src="images/move-in-out.webp" alt=""></div>
-          <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-        </div>
-        <div class="svc" data-i="3">
-          <span class="n">04</span>
-          <div><h3>Custom Cleaning Plans</h3><p>Tailored cleaning built around your specific needs, with the same 5 Star experience.</p><img class="svc-thumb" src="images/housekeeping.webp" alt=""></div>
-          <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-        </div>
-        <div class="svc" data-i="4">
-          <span class="n">05</span>
-          <div><h3>General Housekeeping</h3><p>Everyday housekeeping help to keep your home tidy and organized.</p><img class="svc-thumb" src="images/housekeeping.webp" alt=""></div>
-          <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-        </div>
-        <div class="svc" data-i="5">
-          <span class="n">06</span>
-          <div><h3>Office &amp; Workplace Cleaning</h3><p>Cleaning for offices and workplaces across Calgary, Airdrie and Chestermere.</p><img class="svc-thumb" src="images/calgary-skyline.webp" alt=""></div>
-          <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-        </div>
-      </div>
-      <div class="svc-photo">
-        <img class="on" src="images/living-room.webp" alt="Freshly cleaned living room">
-        <img src="images/team-training.webp" alt="Sterling Maids team checking a bathroom clean">
-        <img src="images/move-in-out.webp" alt="Moving boxes on move day">
-        <img src="images/housekeeping.webp" alt="Organizing a closet">
-        <img src="images/housekeeping.webp" alt="Organizing a closet">
-        <img src="images/calgary-skyline.webp" alt="Downtown Calgary">
-        <div class="cap" id="svcCap">01 / Recurring Cleaning</div>
-      </div>
+    <div class="panels rv">
+        <article class="panel on">
+          <img src="images/living-room-bright.webp" alt="Recurring Cleaning by Sterling Maids" loading="lazy">
+          <span class="num">01</span>
+          <span class="vlabel">Recurring Cleaning</span>
+          <div class="body"><h3>Recurring Cleaning</h3><p>Standard cleaning on a weekly, bi-weekly or monthly schedule. Consistency is key.</p><a href="#book">Book this service &rarr;</a></div>
+        </article>
+        <article class="panel">
+          <img src="images/bathroom-clean.webp" alt="Deep Cleaning by Sterling Maids" loading="lazy">
+          <span class="num">02</span>
+          <span class="vlabel">Deep Cleaning</span>
+          <div class="body"><h3>Deep Cleaning</h3><p>Made for homes with kids, pets and busy schedules. Pre-event cleaning and the heavy-duty tasks.</p><a href="#book">Book this service &rarr;</a></div>
+        </article>
+        <article class="panel">
+          <img src="images/move-out-empty-room.webp" alt="Move-In / Move-Out by Sterling Maids" loading="lazy">
+          <span class="num">03</span>
+          <span class="vlabel">Move-In / Move-Out</span>
+          <div class="body"><h3>Move-In / Move-Out</h3><p>Professional cleaning to help you settle into your new place, or hand back the old one spotless.</p><a href="#book">Book this service &rarr;</a></div>
+        </article>
+        <article class="panel">
+          <img src="images/living-room.webp" alt="Custom Cleaning Plans by Sterling Maids" loading="lazy">
+          <span class="num">04</span>
+          <span class="vlabel">Custom Cleaning Plans</span>
+          <div class="body"><h3>Custom Cleaning Plans</h3><p>Tailored cleaning built around your specific needs, with the same 5 Star experience.</p><a href="#book">Book this service &rarr;</a></div>
+        </article>
+        <article class="panel">
+          <img src="images/housekeeping.webp" alt="General Housekeeping by Sterling Maids" loading="lazy">
+          <span class="num">05</span>
+          <span class="vlabel">General Housekeeping</span>
+          <div class="body"><h3>General Housekeeping</h3><p>Everyday housekeeping help to keep your home tidy and organized.</p><a href="#book">Book this service &rarr;</a></div>
+        </article>
+        <article class="panel">
+          <img src="images/calgary-peace-bridge.webp" alt="Office &amp; Workplace by Sterling Maids" loading="lazy">
+          <span class="num">06</span>
+          <span class="vlabel">Office &amp; Workplace</span>
+          <div class="body"><h3>Office &amp; Workplace</h3><p>Cleaning for offices and workplaces across Calgary, Airdrie and Chestermere.</p><a href="#book">Book this service &rarr;</a></div>
+        </article>
     </div>
   </div>
 </section>
 
 <!-- LOCAL -->
 <section class="local" id="areas">
+  <div class="local-band">
+    <img src="images/calgary-skyline.webp" alt="Calgary skyline in autumn">
+    <span class="yyc">Calgary, Alberta</span>
+  </div>
   <div class="wrap">
-    <div class="local-grid">
-      <div class="quote rv">
+    <div class="local-card rv">
+      <div class="local-copy">
         <div class="eyebrow">Dedication to Local</div>
         <blockquote>Big city service, with a <em>small town</em> feel.</blockquote>
         <p>We're a Calgary team based in the northeast, cleaning homes for our neighbours across Calgary, Airdrie and Chestermere. Real people who treat your home the way they'd treat their own.</p>
-        <a href="#book" class="btn btn-gold" style="margin-top:32px">Book your first clean</a>
+        <a href="#book" class="btn btn-gold" style="margin-top:30px">Book your first clean</a>
       </div>
-      <figure class="team rv">
+      <div class="local-team">
         <img src="images/team-training.webp" alt="Sterling Maids cleaners going over a checklist">
-        <figcaption>Our team, checklist in hand</figcaption>
-      </figure>
-    </div>
-    <div class="areas rv">
-      <ul class="names">
-        <li>Calgary <small>Home base</small></li>
-        <li>Airdrie <small>North</small></li>
-        <li>Chestermere <small>East</small></li>
-      </ul>
-      <div class="skyline">
-        <img src="images/calgary-skyline.webp" alt="Calgary skyline in autumn">
-        <div class="tag"><b>4216 12 St NE #201</b>Calgary, AB T2E 6K9</div>
+        <span>Our team, checklist in hand</span>
       </div>
+    </div>
+    <div class="area-row rv">
+      <div class="area"><span class="n">01</span><h3>Calgary</h3><p>Home base. 4216 12 St NE #201, Calgary, AB T2E 6K9</p><a href="#book">Book in Calgary &rarr;</a></div>
+      <div class="area"><span class="n">02</span><h3>Airdrie</h3><p>Weekly, bi-weekly and monthly cleaning just north of Calgary.</p><a href="#book">Book in Airdrie &rarr;</a></div>
+      <div class="area"><span class="n">03</span><h3>Chestermere</h3><p>Weekly, bi-weekly and monthly cleaning just east of Calgary.</p><a href="#book">Book in Chestermere &rarr;</a></div>
     </div>
   </div>
 </section>
@@ -472,19 +478,25 @@ footer{background:#0c0e13;color:var(--silver);padding:90px 0 0;font-size:15px}
 <!-- REVIEWS -->
 <section class="reviews">
   <div class="wrap">
-    <div class="rev-card rv">
-      <img src="images/five-star-badge.webp" alt="Five Star Home Cleaning">
-      <div>
-        <div class="stars">
-          <svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
-        </div>
+    <div class="rev-grid rv">
+      <div class="rev-score">
+        <b>5</b>
+        <div class="stars"><svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></div>
+        <small>Star experience</small>
+      </div>
+      <div class="rev-copy">
         <div class="eyebrow">Customer Reviews</div>
         <h2>Hear what your neighbors are saying about us.</h2>
         <p>Calgary, Airdrie and Chestermere homeowners share their Sterling Maids experience on Google.</p>
+        <div class="acts">
+          <a class="btn btn-ink" href="https://www.google.com/search?q=Sterling+Maids+Calgary+reviews" target="_blank" rel="noopener">Read our Google reviews</a>
+          <a class="btn btn-oink" href="#book">Book your clean</a>
+        </div>
       </div>
-      <div class="act">
-        <a class="btn btn-gold" href="https://www.google.com/search?q=Sterling+Maids+Calgary+reviews" target="_blank" rel="noopener">Read our Google reviews</a>
-        <a class="btn btn-line" href="#book">Book your clean</a>
+      <div class="rev-badge" aria-hidden="true">
+        <svg viewBox="0 0 230 230"><defs><path id="rb" d="M115,115 m-98,0 a98,98 0 1,1 196,0 a98,98 0 1,1 -196,0"/></defs>
+          <text font-family="Manrope" font-size="13" font-weight="700" letter-spacing="5" fill="#12151c"><textPath href="#rb">FIVE STAR · HOME CLEANING · STERLING MAIDS ·</textPath></text></svg>
+        <img src="images/five-star-badge.webp" alt="">
       </div>
     </div>
   </div>
@@ -606,14 +618,10 @@ document.querySelectorAll('.freq-tabs button').forEach(b=>b.onclick=()=>{
 });
 draw('weekly');
 
-/* services index */
-const svcs=document.querySelectorAll('.svc'),pics=document.querySelectorAll('.svc-photo img'),cap=document.getElementById('svcCap');
-function pick(s){
-  svcs.forEach(x=>x.classList.remove('on'));s.classList.add('on');
-  const i=+s.dataset.i;pics.forEach((p,j)=>p.classList.toggle('on',j===i));
-  cap.textContent=s.querySelector('.n').textContent+' / '+s.querySelector('h3').textContent;
-}
-svcs.forEach(s=>{s.addEventListener('mouseenter',()=>{if(innerWidth>1080)pick(s)});s.addEventListener('click',()=>pick(s))});
+/* service panels */
+const panels=document.querySelectorAll('.panel');
+function openP(p){panels.forEach(x=>x.classList.toggle('on',x===p))}
+panels.forEach(p=>{p.addEventListener('mouseenter',()=>{if(innerWidth>1080)openP(p)});p.addEventListener('click',()=>openP(p))});
 
 /* reveal */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
