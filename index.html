@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sterling Maids | Home Cleaning Service in Calgary, Airdrie &amp; Chestermere</title>
+<meta name="description" content="Sterling Maids is a home cleaning service in Calgary, Airdrie and Chestermere. Weekly, bi-weekly and monthly recurring cleaning, deep cleaning, move-in/out cleaning and custom cleaning plans.">
+<link rel="icon" href="images/sterling-maids-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Albert+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#12151c;
+  --ink-2:#1b202a;
+  --ink-3:#262c38;
+  --paper:#f3f1ec;
+  --paper-2:#e7e4dd;
+  --silver:#b9bdc4;
+  --silver-hi:#e9ebee;
+  --silver-lo:#8a8f98;
+  --gold:#c6a64b;
+  --gold-deep:#a8872f;
+  --text:#22262e;
+  --muted:#5d636d;
+  --line:rgba(18,21,28,.14);
+  --line-d:rgba(233,235,238,.16);
+  --serif:"Bodoni Moda",Georgia,serif;
+  --sans:"Albert Sans",system-ui,sans-serif;
+  --wrap:1240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--text);background:var(--paper);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
+.eyebrow{font-size:12px;letter-spacing:.24em;text-transform:uppercase;font-weight:600}
+.silver-text{background:linear-gradient(100deg,#8d929b 0%,#f4f5f7 28%,#a9aeb6 48%,#eef0f2 70%,#9a9fa8 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15px;padding:15px 26px;border-radius:2px;transition:.25s;cursor:pointer;border:0;font-family:var(--sans)}
+.btn-gold{background:var(--gold);color:var(--ink)}
+.btn-gold:hover{background:#d8b85c}
+.btn-line{border:1px solid var(--line-d);color:var(--silver-hi)}
+.btn-line:hover{border-color:var(--silver);background:rgba(255,255,255,.05)}
+.btn svg{width:16px;height:16px}
+
+/* ===== top bar + header ===== */
+.topbar{background:#0c0e13;color:var(--silver);font-size:13px}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:40px;gap:16px}
+.topbar a:hover{color:#fff}
+.topbar .tb-left{display:flex;gap:26px}
+.topbar span b{color:var(--silver-hi);font-weight:500}
+header.site{position:sticky;top:0;z-index:50;background:rgba(18,21,28,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-d)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;height:84px}
+.logo img{height:58px;width:auto}
+nav.main{display:flex;gap:34px;align-items:center}
+nav.main a{color:var(--silver);font-size:15px;font-weight:500;position:relative}
+nav.main a:hover{color:#fff}
+nav.main .has-dd{position:relative}
+nav.main .dd{position:absolute;top:100%;left:-18px;padding-top:22px;opacity:0;visibility:hidden;transition:.2s}
+nav.main .has-dd:hover .dd{opacity:1;visibility:visible}
+nav.main .dd div{background:var(--ink-2);border:1px solid var(--line-d);min-width:250px;padding:10px 0}
+nav.main .dd a{display:block;padding:9px 20px;font-size:14px}
+.menu-btn{display:none;background:none;border:0;color:#fff;cursor:pointer}
+.mobile-nav{display:none}
+
+/* ===== hero ===== */
+.hero{background:var(--ink);color:var(--silver-hi);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:
+  repeating-linear-gradient(90deg,rgba(255,255,255,.018) 0 1px,transparent 1px 3px),
+  radial-gradient(900px 500px at 85% 20%,rgba(185,189,196,.10),transparent 60%);pointer-events:none}
+.hero .wrap{display:grid;grid-template-columns:1.08fr .92fr;gap:64px;align-items:center;padding-top:80px;padding-bottom:96px;position:relative}
+.hero .eyebrow{color:var(--gold);display:flex;align-items:center;gap:14px}
+.hero .eyebrow::before{content:"";width:38px;height:1px;background:var(--gold)}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(46px,6.2vw,92px);line-height:.98;letter-spacing:-.02em;margin:26px 0 28px}
+.hero h1 em{font-style:italic}
+.hero p.lead{font-size:19px;color:var(--silver);max-width:500px}
+.hero .ctas{display:flex;gap:14px;margin-top:38px;flex-wrap:wrap}
+.hero .facts{display:flex;gap:0;margin-top:56px;border-top:1px solid var(--line-d)}
+.hero .facts div{padding:20px 28px 0 0;margin-right:28px;border-right:1px solid var(--line-d);font-size:14px;color:var(--silver)}
+.hero .facts div:last-child{border:0}
+.hero .facts b{display:block;font-family:var(--serif);font-size:24px;font-weight:400;color:#fff;line-height:1.2}
+.hero-visual{position:relative;justify-self:end;width:100%;max-width:470px}
+.hero-visual .frame{position:relative;aspect-ratio:3/4;clip-path:polygon(0 0,100% 0,100% 88%,88% 100%,0 100%)}
+.hero-visual .frame img{width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.03)}
+.hero-visual::after{content:"";position:absolute;inset:22px -22px -22px 22px;border:1px solid rgba(185,189,196,.35);z-index:-1;clip-path:polygon(0 0,100% 0,100% 88%,88% 100%,0 100%)}
+.stamp{position:absolute;left:-74px;bottom:56px;width:150px;height:150px;border-radius:50%;background:var(--ink);display:grid;place-items:center;border:1px solid rgba(198,166,75,.5)}
+.stamp svg.ring{position:absolute;inset:0;width:100%;height:100%;animation:spin 26s linear infinite}
+.stamp .core{font-family:var(--serif);font-style:italic;font-size:15px;line-height:1.1;text-align:center;color:var(--gold)}
+.stamp .core b{display:block;font-size:36px;font-style:normal;font-weight:400;color:#fff}
+@keyframes spin{to{transform:rotate(360deg)}}
+.voucher-tag{position:absolute;right:-14px;top:36px;background:var(--gold);color:var(--ink);padding:12px 18px;font-weight:700;font-size:14px;line-height:1.25;box-shadow:0 14px 30px rgba(0,0,0,.35)}
+.voucher-tag small{display:block;font-weight:500;font-size:12px}
+
+/* ===== rhythm (recurring) ===== */
+.rhythm{padding:120px 0 110px}
+.rhythm .head{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:56px}
+.rhythm .eyebrow{color:var(--gold-deep)}
+.h2{font-family:var(--serif);font-weight:400;font-size:clamp(36px,4.4vw,60px);line-height:1.04;letter-spacing:-.015em;color:var(--ink)}
+.h2 em{font-style:italic}
+.rhythm .head p{color:var(--muted);max-width:470px}
+.rhythm-board{display:grid;grid-template-columns:330px 1fr;border:1px solid var(--line);background:#fbfaf7}
+.freq-tabs{border-right:1px solid var(--line)}
+.freq-tabs button{display:flex;width:100%;text-align:left;justify-content:space-between;align-items:center;padding:30px 32px;border:0;border-bottom:1px solid var(--line);background:none;font-family:var(--serif);font-size:30px;color:var(--muted);cursor:pointer;transition:.25s}
+.freq-tabs button:last-child{border-bottom:0}
+.freq-tabs button span{font-family:var(--sans);font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+.freq-tabs button.on{background:var(--ink);color:#fff}
+.freq-tabs button.on span{color:var(--gold)}
+.freq-view{padding:40px 48px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+.cal .dow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--silver-lo);text-align:center;padding-bottom:4px}
+.cal i{aspect-ratio:1;border:1px solid var(--line);display:grid;place-items:center;font-style:normal;font-size:12px;color:var(--silver-lo);transition:.35s}
+.cal i.visit{background:var(--ink);border-color:var(--ink);color:var(--gold);font-weight:700}
+.freq-copy .big{font-family:var(--serif);font-size:84px;line-height:1;color:var(--ink)}
+.freq-copy .big small{font-size:20px;font-style:italic;color:var(--muted);margin-left:8px}
+.freq-copy h3{font-size:20px;margin:14px 0 10px;color:var(--ink)}
+.freq-copy p{color:var(--muted);font-size:16px}
+.freq-copy a{display:inline-block;margin-top:22px;font-weight:600;color:var(--ink);border-bottom:2px solid var(--gold);padding-bottom:3px}
+
+/* ===== services index ===== */
+.services{background:var(--ink);color:var(--silver-hi);padding:120px 0}
+.services .top{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:60px}
+.services .h2{color:#fff}
+.services .eyebrow{color:var(--gold)}
+.services .top p{max-width:380px;color:var(--silver)}
+.svc-wrap{display:grid;grid-template-columns:1fr 400px;gap:60px;align-items:start}
+.svc-list{border-top:1px solid var(--line-d)}
+.svc{display:grid;grid-template-columns:70px 1fr auto;gap:20px;align-items:center;padding:28px 0;border-bottom:1px solid var(--line-d);cursor:pointer;transition:.3s}
+.svc .n{font-family:var(--serif);font-style:italic;color:var(--silver-lo);font-size:20px}
+.svc h3{font-family:var(--serif);font-weight:400;font-size:clamp(26px,2.8vw,38px);line-height:1.1;color:var(--silver);transition:.3s}
+.svc p{font-size:15px;color:var(--silver-lo);max-height:0;overflow:hidden;transition:max-height .4s, margin .4s;max-width:560px}
+.svc .arr{width:44px;height:44px;border:1px solid var(--line-d);border-radius:50%;display:grid;place-items:center;transition:.3s}
+.svc .arr svg{width:16px}
+.svc.on h3{color:#fff}
+.svc.on .n{color:var(--gold)}
+.svc.on p{max-height:120px;margin-top:10px}
+.svc.on .arr{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.svc-photo{position:sticky;top:120px;aspect-ratio:3/4;overflow:hidden;clip-path:inset(0 round 0 90px 0 90px)}
+.svc-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s, transform 1.2s;transform:scale(1.06)}
+.svc-photo img.on{opacity:1;transform:scale(1)}
+.svc-photo .cap{position:absolute;left:0;bottom:0;right:0;padding:22px 24px;background:linear-gradient(transparent,rgba(12,14,19,.85));font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--silver-hi)}
+.svc-thumb{display:none}
+
+/* ===== local ===== */
+.local{padding:120px 0 0;position:relative}
+.local-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:28px;align-items:start}
+.local .quote{grid-column:1/8}
+.local .quote .eyebrow{color:var(--gold-deep)}
+.local blockquote{font-family:var(--serif);font-size:clamp(38px,5vw,74px);line-height:1.02;letter-spacing:-.02em;color:var(--ink);margin:24px 0 30px}
+.local blockquote em{font-style:italic;color:var(--gold-deep)}
+.local .quote p{max-width:520px;color:var(--muted)}
+.local .team{grid-column:8/13;margin-top:20px;position:relative}
+.local .team img{aspect-ratio:4/5;object-fit:cover;width:100%}
+.local .team figcaption{font-size:13px;color:var(--muted);margin-top:12px;display:flex;gap:10px;align-items:center}
+.local .team figcaption::before{content:"";width:24px;height:1px;background:var(--gold-deep)}
+.areas{margin-top:90px;display:grid;grid-template-columns:1.1fr 1fr;border-top:1px solid var(--line)}
+.areas .names{padding:40px 40px 50px 0;border-right:1px solid var(--line)}
+.areas .names li{list-style:none;font-family:var(--serif);font-size:clamp(40px,5vw,72px);line-height:1.1;color:var(--ink);display:flex;align-items:baseline;gap:18px;border-bottom:1px solid var(--line);padding:10px 0}
+.areas .names li:last-child{border:0}
+.areas .names li small{font-family:var(--sans);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--silver-lo)}
+.areas .skyline{position:relative;min-height:420px}
+.areas .skyline img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.areas .skyline .tag{position:absolute;left:28px;bottom:28px;background:var(--paper);padding:16px 20px;font-size:14px;max-width:290px}
+.areas .skyline .tag b{display:block;font-family:var(--serif);font-weight:500;font-size:18px;color:var(--ink)}
+
+/* ===== reviews ===== */
+.reviews{background:var(--paper-2);padding:110px 0}
+.rev-card{display:grid;grid-template-columns:240px 1fr auto;gap:56px;align-items:center;background:var(--ink);color:var(--silver-hi);padding:56px 60px;position:relative;overflow:hidden}
+.rev-card::after{content:"\201C";position:absolute;right:30px;top:-60px;font-family:var(--serif);font-size:340px;color:rgba(255,255,255,.04);line-height:1}
+.rev-card img{width:200px;height:200px;object-fit:cover;border:1px solid rgba(198,166,75,.4)}
+.rev-card .eyebrow{color:var(--gold)}
+.rev-card h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3.4vw,48px);line-height:1.08;margin:14px 0 14px;color:#fff}
+.rev-card p{color:var(--silver);max-width:460px}
+.stars{display:flex;gap:4px;margin-bottom:6px}
+.stars svg{width:20px;height:20px;fill:var(--gold)}
+.rev-card .act{display:flex;flex-direction:column;gap:12px;position:relative;z-index:1}
+
+/* ===== book ===== */
+.book{padding:120px 0;background:var(--paper)}
+.book-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:0;box-shadow:0 30px 80px rgba(18,21,28,.12)}
+.book-side{background:var(--ink-2);color:var(--silver-hi);padding:56px 48px;position:relative;overflow:hidden}
+.book-side::before{content:"";position:absolute;inset:0;background:url(images/calgary-peace-bridge.webp) center/cover;opacity:.14}
+.book-side>*{position:relative}
+.book-side .eyebrow{color:var(--gold)}
+.book-side h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,3.6vw,52px);line-height:1.04;color:#fff;margin:18px 0 18px}
+.book-side h2 .v{color:var(--gold);font-style:italic}
+.book-side p{color:var(--silver)}
+.contact-rows{margin-top:40px;border-top:1px solid var(--line-d)}
+.contact-rows a,.contact-rows div{display:grid;grid-template-columns:38px 1fr;gap:14px;padding:18px 0;border-bottom:1px solid var(--line-d);font-size:15px;color:var(--silver-hi)}
+.contact-rows svg{width:20px;height:20px;color:var(--gold);margin-top:2px}
+.contact-rows small{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--silver-lo)}
+.contact-rows a:hover{color:#fff}
+form.bk{background:#fff;padding:56px 52px}
+form.bk h3{font-family:var(--serif);font-weight:400;font-size:30px;color:var(--ink);margin-bottom:6px}
+form.bk .sub{color:var(--muted);font-size:15px;margin-bottom:30px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.fld{margin-bottom:18px}
+.fld label{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--ink);margin-bottom:8px}
+.fld input,.fld select{width:100%;border:0;border-bottom:1px solid #c9ccd2;padding:10px 0 12px;font:inherit;font-size:16px;background:transparent;color:var(--text);border-radius:0;outline:none;transition:border-color .2s}
+.fld input:focus,.fld select:focus{border-color:var(--gold-deep)}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pills label{margin:0}
+.pills input{display:none}
+.pills span{display:inline-block;padding:9px 16px;border:1px solid #d4d6db;font-size:14px;cursor:pointer;transition:.2s;text-transform:none;letter-spacing:0;font-weight:500}
+.pills input:checked+span{background:var(--ink);color:#fff;border-color:var(--ink)}
+.consent{display:flex;gap:12px;align-items:flex-start;font-size:12.5px;color:var(--muted);line-height:1.5;margin:10px 0}
+.consent input{margin-top:3px;accent-color:var(--ink)}
+.consent a{text-decoration:underline}
+form.bk .btn{width:100%;justify-content:center;margin-top:18px;padding:18px}
+
+/* ===== footer ===== */
+footer{background:#0c0e13;color:var(--silver);padding:90px 0 0;font-size:15px}
+.ft-top{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;gap:48px;padding-bottom:64px;border-bottom:1px solid var(--line-d)}
+.ft-top img{height:74px;margin-bottom:20px}
+.ft-top p{color:var(--silver-lo);max-width:290px}
+.ft-top h4{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;font-weight:600}
+.ft-top li{list-style:none;margin-bottom:11px}
+.ft-top a:hover{color:#fff}
+.ft-big{font-family:var(--serif);font-style:italic;font-size:clamp(46px,9vw,140px);line-height:1;padding:40px 0 10px;white-space:nowrap;text-align:center;letter-spacing:-.02em}
+.ft-bottom{display:flex;justify-content:space-between;gap:20px;padding:24px 0 30px;font-size:13px;color:var(--silver-lo);border-top:1px solid var(--line-d);flex-wrap:wrap}
+.ft-bottom a{color:var(--silver-hi)}
+.ft-bottom a:hover{color:var(--gold)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s ease, transform .9s ease}
+.rv.in{opacity:1;transform:none}
+
+/* ===== responsive ===== */
+@media (max-width:1080px){
+  nav.main{display:none}
+  .menu-btn{display:block}
+  .header-cta{display:none}
+  .mobile-nav.open{display:block;background:var(--ink-2);border-top:1px solid var(--line-d);padding:10px 28px 24px}
+  .mobile-nav a{display:block;color:var(--silver-hi);padding:12px 0;border-bottom:1px solid var(--line-d)}
+  .hero .wrap{grid-template-columns:1fr;gap:70px}
+  .hero-visual{justify-self:center}
+  .rhythm .head{grid-template-columns:1fr;gap:20px}
+  .rhythm-board{grid-template-columns:1fr}
+  .freq-tabs{display:grid;grid-template-columns:repeat(3,1fr);border-right:0;border-bottom:1px solid var(--line)}
+  .freq-tabs button{font-size:19px;flex-direction:column;align-items:flex-start;gap:6px;padding:22px 20px;border-bottom:0;border-right:1px solid var(--line)}
+  .freq-tabs button:last-child{border-right:0}
+  .svc-wrap{grid-template-columns:1fr}
+  .svc-photo{display:none}
+  .svc-thumb{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;margin-top:14px;max-height:0;transition:max-height .4s}
+  .svc.on .svc-thumb{max-height:400px}
+  .services .top{flex-direction:column;align-items:flex-start}
+  .local .quote,.local .team{grid-column:1/-1}
+  .areas{grid-template-columns:1fr}
+  .areas .names{border-right:0;padding-right:0}
+  .rev-card{grid-template-columns:1fr;gap:28px;padding:44px 32px}
+  .book-grid{grid-template-columns:1fr}
+  .ft-top{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .wrap{padding:0 18px}
+  .topbar .tb-left span:nth-child(2){display:none}
+  .topbar .tb-right{display:none}
+  .logo img{height:46px}
+  header.site .wrap{height:70px}
+  .hero .wrap{padding-top:54px;padding-bottom:70px}
+  .hero .facts{flex-wrap:wrap}
+  .hero .facts div{border:0;padding-right:0;margin-right:26px}
+  .stamp{left:-8px;bottom:-40px;width:116px;height:116px}
+  .stamp .core b{font-size:28px}
+  .voucher-tag{right:-6px}
+  .hero-visual::after{inset:14px -12px -14px 12px}
+  .rhythm,.services,.reviews,.book{padding:84px 0}
+  .local{padding-top:84px}
+  .freq-view{grid-template-columns:1fr;padding:28px 20px;gap:30px}
+  .freq-copy .big{font-size:64px}
+  .svc{grid-template-columns:44px 1fr auto;gap:12px}
+  .book-side,form.bk{padding:40px 24px}
+  .f2{grid-template-columns:1fr;gap:0}
+  .ft-top{grid-template-columns:1fr}
+  .rev-card img{width:150px;height:150px}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="tb-left">
+      <span>Open <b>Mon to Sun, 8:00am to 9:00pm</b></span>
+      <span>Calgary · Airdrie · Chestermere</span>
+    </div>
+    <div class="tb-right"><a href="tel:+15873553590">(587) 355-3590</a></div>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a href="#" class="logo" aria-label="Sterling Maids home"><img src="images/sterling-maids-logo.png" alt="Sterling Maids"></a>
+    <nav class="main">
+      <a href="#">Home</a>
+      <div class="has-dd"><a href="#services">Services ▾</a>
+        <div class="dd"><div>
+          <a href="#services">Recurring Cleaning</a>
+          <a href="#services">Deep Cleaning</a>
+          <a href="#services">Moving-Related Cleaning</a>
+          <a href="#services">General Housekeeping</a>
+          <a href="#services">Office &amp; Workplace Cleaning</a>
+        </div></div>
+      </div>
+      <div class="has-dd"><a href="#areas">Service Areas ▾</a>
+        <div class="dd"><div>
+          <a href="#areas">Calgary</a>
+          <a href="#areas">Airdrie</a>
+          <a href="#areas">Chestermere</a>
+        </div></div>
+      </div>
+      <a href="#">About Us</a>
+      <a href="#">Careers</a>
+    </nav>
+    <a href="#book" class="btn btn-gold header-cta">Book Online</a>
+    <button class="menu-btn" aria-label="Open menu" onclick="document.querySelector('.mobile-nav').classList.toggle('open')">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+    </button>
+  </div>
+  <div class="mobile-nav">
+    <a href="#">Home</a><a href="#services">Services</a><a href="#areas">Service Areas</a><a href="#">About Us</a><a href="#">Careers</a><a href="#book">Book Online</a><a href="tel:+15873553590">Call (587) 355-3590</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="rv">
+      <div class="eyebrow">Home Cleaning Service in Calgary</div>
+      <h1>A professionally <em class="silver-text">cleaned home,</em> on your schedule.</h1>
+      <p class="lead">Weekly, bi-weekly and monthly residential cleaning, plus deep cleans, move-in/out cleans and custom cleaning plans across Calgary, Airdrie and Chestermere.</p>
+      <div class="ctas">
+        <a href="#book" class="btn btn-gold">Book Online
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="tel:+15873553590" class="btn btn-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+          (587) 355-3590</a>
+      </div>
+      <div class="facts">
+        <div><b>7 days</b>a week, 8am to 9pm</div>
+        <div><b>3 cities</b>Calgary, Airdrie, Chestermere</div>
+        <div><b>5 Star</b>experience</div>
+      </div>
+    </div>
+    <div class="hero-visual rv">
+      <div class="frame"><img src="images/living-room.webp" alt="A freshly cleaned living room with hardwood floors"></div>
+      <div class="voucher-tag">$50 voucher<small>when you book online</small></div>
+      <div class="stamp" aria-hidden="true">
+        <svg class="ring" viewBox="0 0 150 150"><defs><path id="c" d="M75,75 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0"/></defs>
+          <text font-family="Albert Sans" font-size="10.5" letter-spacing="3.2" fill="#b9bdc4"><textPath href="#c">STERLING MAIDS · BIG CITY SERVICE · SMALL TOWN FEEL ·</textPath></text></svg>
+        <div class="core"><b>YYC</b>home cleaning</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RHYTHM / RECURRING -->
+<section class="rhythm" id="recurring">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <div class="eyebrow">Recurring Cleaning</div>
+        <h2 class="h2" style="margin-top:16px">Consistency <em>is key.</em></h2>
+      </div>
+      <p>Pick the rhythm that fits your home. Weekly, bi-weekly or monthly, your Sterling Maids team keeps the same standard every visit so the house stays the way you like it.</p>
+    </div>
+    <div class="rhythm-board rv">
+      <div class="freq-tabs" role="tablist">
+        <button class="on" data-f="weekly">Weekly <span>4 visits / mo</span></button>
+        <button data-f="biweekly">Bi-weekly <span>2 visits / mo</span></button>
+        <button data-f="monthly">Monthly <span>1 visit / mo</span></button>
+      </div>
+      <div class="freq-view">
+        <div class="cal" id="cal"></div>
+        <div class="freq-copy">
+          <div class="big" id="fBig">4<small>visits a month</small></div>
+          <h3 id="fTitle">Weekly cleaning</h3>
+          <p id="fText">For busy households, kids and pets. A clean home every single week without lifting a finger.</p>
+          <a href="#book" id="fLink">Book weekly cleaning</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES INDEX -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="top rv">
+      <div>
+        <div class="eyebrow">Our Services</div>
+        <h2 class="h2" style="margin-top:16px">Every kind of clean,<br><em class="silver-text">one trusted team.</em></h2>
+      </div>
+      <p>From regular upkeep to the heavy-duty jobs, choose the service that fits and we'll take it from there.</p>
+    </div>
+    <div class="svc-wrap">
+      <div class="svc-list">
+        <div class="svc on" data-i="0">
+          <span class="n">01</span>
+          <div><h3>Recurring Cleaning</h3><p>Standard cleaning on a weekly, bi-weekly or monthly schedule. Consistency is key.</p><img class="svc-thumb" src="images/living-room.webp" alt=""></div>
+          <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </div>
+        <div class="svc" data-i="1">
+          <span class="n">02</span>
+          <div><h3>Deep Cleaning</h3><p>Made for homes with kids, pets and busy schedules. Pre-event cleaning and the heavy-duty tasks.</p><img class="svc-thumb" src="images/team-training.webp" alt=""></div>
+          <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </div>
+        <div class="svc" data-i="2">
+          <span class="n">03</span>
+          <div><h3>Move-In / Move-Out Cleaning</h3><p>Professional cleaning to help you settle into your new place, or hand back the old one spotless.</p><img class="svc-thumb" src="images/move-in-out.webp" alt=""></div>
+          <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </div>
+        <div class="svc" data-i="3">
+          <span class="n">04</span>
+          <div><h3>Custom Cleaning Plans</h3><p>Tailored cleaning built around your specific needs, with the same 5 Star experience.</p><img class="svc-thumb" src="images/housekeeping.webp" alt=""></div>
+          <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </div>
+        <div class="svc" data-i="4">
+          <span class="n">05</span>
+          <div><h3>General Housekeeping</h3><p>Everyday housekeeping help to keep your home tidy and organized.</p><img class="svc-thumb" src="images/housekeeping.webp" alt=""></div>
+          <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </div>
+        <div class="svc" data-i="5">
+          <span class="n">06</span>
+          <div><h3>Office &amp; Workplace Cleaning</h3><p>Cleaning for offices and workplaces across Calgary, Airdrie and Chestermere.</p><img class="svc-thumb" src="images/calgary-skyline.webp" alt=""></div>
+          <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </div>
+      </div>
+      <div class="svc-photo">
+        <img class="on" src="images/living-room.webp" alt="Freshly cleaned living room">
+        <img src="images/team-training.webp" alt="Sterling Maids team checking a bathroom clean">
+        <img src="images/move-in-out.webp" alt="Moving boxes on move day">
+        <img src="images/housekeeping.webp" alt="Organizing a closet">
+        <img src="images/housekeeping.webp" alt="Organizing a closet">
+        <img src="images/calgary-skyline.webp" alt="Downtown Calgary">
+        <div class="cap" id="svcCap">01 / Recurring Cleaning</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCAL -->
+<section class="local" id="areas">
+  <div class="wrap">
+    <div class="local-grid">
+      <div class="quote rv">
+        <div class="eyebrow">Dedication to Local</div>
+        <blockquote>Big city service, with a <em>small town</em> feel.</blockquote>
+        <p>We're a Calgary team based in the northeast, cleaning homes for our neighbours across Calgary, Airdrie and Chestermere. Real people who treat your home the way they'd treat their own.</p>
+        <a href="#book" class="btn btn-gold" style="margin-top:32px">Book your first clean</a>
+      </div>
+      <figure class="team rv">
+        <img src="images/team-training.webp" alt="Sterling Maids cleaners going over a checklist">
+        <figcaption>Our team, checklist in hand</figcaption>
+      </figure>
+    </div>
+    <div class="areas rv">
+      <ul class="names">
+        <li>Calgary <small>Home base</small></li>
+        <li>Airdrie <small>North</small></li>
+        <li>Chestermere <small>East</small></li>
+      </ul>
+      <div class="skyline">
+        <img src="images/calgary-skyline.webp" alt="Calgary skyline in autumn">
+        <div class="tag"><b>4216 12 St NE #201</b>Calgary, AB T2E 6K9</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews">
+  <div class="wrap">
+    <div class="rev-card rv">
+      <img src="images/five-star-badge.webp" alt="Five Star Home Cleaning">
+      <div>
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+        </div>
+        <div class="eyebrow">Customer Reviews</div>
+        <h2>Hear what your neighbors are saying about us.</h2>
+        <p>Calgary, Airdrie and Chestermere homeowners share their Sterling Maids experience on Google.</p>
+      </div>
+      <div class="act">
+        <a class="btn btn-gold" href="https://www.google.com/search?q=Sterling+Maids+Calgary+reviews" target="_blank" rel="noopener">Read our Google reviews</a>
+        <a class="btn btn-line" href="#book">Book your clean</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK -->
+<section class="book" id="book">
+  <div class="wrap">
+    <div class="book-grid rv">
+      <div class="book-side">
+        <div class="eyebrow">Book Online</div>
+        <h2>Book online and get a <span class="v">$50 voucher.</span></h2>
+        <p>Tell us a little about your home and the service you need. We'll get back to you to confirm the details.</p>
+        <div class="contact-rows">
+          <a href="tel:+15873553590"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span><small>Call or text</small>(587) 355-3590</span></a>
+          <a href="https://maps.google.com/?q=4216+12+St+NE+%23201,+Calgary,+AB+T2E+6K9" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span><small>Office</small>4216 12 St NE #201, Calgary, AB T2E 6K9</span></a>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><small>Hours</small>Mon to Sun, 8:00am to 9:00pm</span></div>
+        </div>
+      </div>
+      <form class="bk" onsubmit="event.preventDefault();this.querySelector('button').textContent='Thank you! We will be in touch.';">
+        <h3>Request your booking</h3>
+        <p class="sub">Takes under a minute. Your $50 voucher is applied when you book online.</p>
+        <div class="fld">
+          <label>Service</label>
+          <div class="pills">
+            <label><input type="radio" name="svc" checked><span>Recurring</span></label>
+            <label><input type="radio" name="svc"><span>Deep Clean</span></label>
+            <label><input type="radio" name="svc"><span>Move-In / Out</span></label>
+            <label><input type="radio" name="svc"><span>Custom Plan</span></label>
+            <label><input type="radio" name="svc"><span>Office</span></label>
+          </div>
+        </div>
+        <div class="fld">
+          <label for="freq">How often?</label>
+          <select id="freq"><option>Weekly</option><option>Bi-weekly</option><option>Monthly</option><option>One-time</option></select>
+        </div>
+        <div class="f2">
+          <div class="fld"><label for="fn">First name</label><input id="fn" required></div>
+          <div class="fld"><label for="ln">Last name</label><input id="ln" required></div>
+        </div>
+        <div class="f2">
+          <div class="fld"><label for="em">Email</label><input id="em" type="email" required></div>
+          <div class="fld"><label for="ph">Phone</label><input id="ph" type="tel" required></div>
+        </div>
+        <label class="consent"><input type="checkbox"> I consent to receive marketing text messages from Sterling Maids at the phone number provided. Message frequency may vary. Message &amp; data rates may apply. Reply STOP to opt out.</label>
+        <label class="consent"><input type="checkbox"> I consent to receive non-marketing text messages from Sterling Maids about my booking. Message &amp; data rates may apply. Reply STOP to opt out.</label>
+        <p class="consent" style="margin-top:0"><span>By submitting you agree to our <a href="#">Terms &amp; Conditions</a> and <a href="#">Privacy Policy</a>.</span></p>
+        <button class="btn btn-gold" type="submit">Book Online &amp; Claim $50 Voucher</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="ft-top">
+      <div>
+        <img src="images/sterling-maids-logo.png" alt="Sterling Maids">
+        <p>Home cleaning service in Calgary, Airdrie and Chestermere. Big city service, with a small town feel.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Recurring Cleaning</a></li>
+          <li><a href="#services">Deep Cleaning</a></li>
+          <li><a href="#services">Moving-Related Cleaning</a></li>
+          <li><a href="#services">General Housekeeping</a></li>
+          <li><a href="#services">Office &amp; Workplace Cleaning</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#book">Book Online</a></li>
+          <li><a href="#">Terms &amp; Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+15873553590">(587) 355-3590</a></li>
+          <li>4216 12 St NE #201<br>Calgary, AB T2E 6K9</li>
+          <li>Mon to Sun, 8:00am to 9:00pm</li>
+          <li>Calgary · Airdrie · Chestermere</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-big silver-text">Sterling Maids</div>
+  </div>
+  <div class="wrap ft-bottom">
+    <span>© <span id="yr">2026</span> Sterling Maids. All rights reserved.</span>
+    <span>Design by <a href="https://cleanningdigital.com/" target="_blank" rel="noopener">Cleaning Digital.</a></span>
+  </div>
+</footer>
+
+<script>
+/* frequency calendar */
+const F={
+  weekly:{n:4,days:[1,8,15,22],t:"Weekly cleaning",p:"For busy households, kids and pets. A clean home every single week without lifting a finger.",l:"Book weekly cleaning"},
+  biweekly:{n:2,days:[1,15],t:"Bi-weekly cleaning",p:"Every other week, the sweet spot for keeping on top of things between your own tidy-ups.",l:"Book bi-weekly cleaning"},
+  monthly:{n:1,days:[1],t:"Monthly cleaning",p:"A thorough reset once a month to keep your home feeling fresh and cared for.",l:"Book monthly cleaning"}
+};
+const cal=document.getElementById('cal');
+function draw(k){
+  const f=F[k];
+  cal.innerHTML=['M','T','W','T','F','S','S'].map(d=>`<span class="dow">${d}</span>`).join('')+
+    Array.from({length:28},(_,i)=>`<i class="${f.days.includes(i+1)?'visit':''}">${i+1}</i>`).join('');
+  document.getElementById('fBig').innerHTML=f.n+'<small>visit'+(f.n>1?'s':'')+' a month</small>';
+  document.getElementById('fTitle').textContent=f.t;
+  document.getElementById('fText').textContent=f.p;
+  document.getElementById('fLink').textContent=f.l;
+}
+document.querySelectorAll('.freq-tabs button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.freq-tabs button').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on');draw(b.dataset.f);
+});
+draw('weekly');
+
+/* services index */
+const svcs=document.querySelectorAll('.svc'),pics=document.querySelectorAll('.svc-photo img'),cap=document.getElementById('svcCap');
+function pick(s){
+  svcs.forEach(x=>x.classList.remove('on'));s.classList.add('on');
+  const i=+s.dataset.i;pics.forEach((p,j)=>p.classList.toggle('on',j===i));
+  cap.textContent=s.querySelector('.n').textContent+' / '+s.querySelector('h3').textContent;
+}
+svcs.forEach(s=>{s.addEventListener('mouseenter',()=>{if(innerWidth>1080)pick(s)});s.addEventListener('click',()=>pick(s))});
+
+/* reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
